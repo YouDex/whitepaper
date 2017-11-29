@@ -18,21 +18,21 @@
 
 pragma solidity 0.4.18;
 
-/// @title DEx - Decentalized exchange of ETH/BTC.
+/// @title DEx - Decentalized exchange of ETH/BTC by Limex protocol.
 /// @author Oleg Tomin - <ot@limex.io>
-
 /// Simple test for ETH/BTC crossshain direct exchange
+
 contract DEx {
 
-    string constant public VERSION = "0.1";
+    string constant public VERSION = "0.1";     // 28.11.2017
     uint16 constant public LIME_RATIO = 300;    // Exchange ratio ETH/LIME     
 
-    uint public ORDER = 0;  // Order number.
+    uint public ORDER = 0;  // Serial order number
 
-    event StartDEx(
+    event StartDEx(         // Record a log of all exchanges
         uint _order,
         address indexed maker,
-        address taker,
+        address indexed taker,
         address indexed plasmoid,
         uint ethAmount,
         uint btcAmount,
@@ -40,7 +40,7 @@ contract DEx {
         uint fee
     );
 
-    event StopDEx(
+    event StopDEx(          //  Record a log of successful exchanges
         uint _order,
         address indexed maker,
         address taker,
@@ -50,9 +50,9 @@ contract DEx {
         uint fee
     );
 
-    event InDepo(uint _order);
+    event InDepo(uint _order);  //  Record a log of successful placements of pledges
 
-    event OutDepo(uint _order);
+    event OutDepo(uint _order); //  Record a log of successful cancellations of pledges
 
     /*
     * Start exchange function - Bob's call
@@ -66,7 +66,7 @@ contract DEx {
     }
 
     /*
-    * Pledge functions - Plasmoid's call
+    * Work with pledges functions - Plasmoid's call
     */
 
     function inDepo(uint _order) public {

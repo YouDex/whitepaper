@@ -15,7 +15,7 @@
   limitations under the License.
 
 */
-/// Simple test
+
 pragma solidity 0.4.11;
 
 import "./TokenTransferProxy.sol";

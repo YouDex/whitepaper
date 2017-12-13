@@ -69,8 +69,8 @@ contract DEx {
         InDepo(_order);
     }
 
-    function outDepo(uint _order, address _diler) public {
-        OutDepo(_order, _diler);
+    function outDepo(uint _order, address _dealer) public {
+        OutDepo(_order, _dealer);
     }
 
     /*

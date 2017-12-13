@@ -31,8 +31,8 @@ contract DEx {
     event StartDEx(         // Record a log of all exchanges
         uint indexed _order,
         address indexed maker,
-        address indexed taker,
-        address indexed plasmoid,
+        address taker,
+        address plasmoid,
         uint ethAmount,
         uint btcAmount,
         uint pledgeLIMEAmount
@@ -40,9 +40,9 @@ contract DEx {
 
     event StopDEx(          //  Record a log of successful exchanges
         uint indexed _order,
-        address indexed maker,
-        address indexed taker,
-        address indexed plasmoid,
+        address maker,
+        address taker,
+        address plasmoid,
         uint ethAmount,
         uint btcAmount,
         uint pledgeLIMEAmount
@@ -50,7 +50,7 @@ contract DEx {
 
     event InDepo(uint indexed _order);  //  Record a log of successful placements of pledges
 
-    event OutDepo(uint indexed _order, address indexed ); //  Record a log of successful cancellations of pledges
+    event OutDepo(uint indexed _order, address indexed _dealer); //  Record a log of successful cancellations of pledges
 
     /*
     * Start exchange function - Bob's call

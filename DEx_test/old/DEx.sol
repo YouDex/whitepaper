@@ -24,7 +24,8 @@ pragma solidity 0.4.18;
 
 contract DEx {
 
-    string constant public VERSION = "0.2";     // 09.12.2017
+    string constant public VERSION = "0.1";     // 28.11.2017
+    uint16 constant public LIME_RATIO = 300;    // Exchange ratio ETH/LIME     
 
     uint public ORDER = 0;  // Serial order number
 
@@ -35,7 +36,8 @@ contract DEx {
         address indexed plasmoid,
         uint ethAmount,
         uint btcAmount,
-        uint pledgeLIMEAmount
+        uint pledgeLIMEAmount,
+        uint fee
     );
 
     event StopDEx(          //  Record a log of successful exchanges
@@ -45,7 +47,7 @@ contract DEx {
         address indexed plasmoid,
         uint ethAmount,
         uint btcAmount,
-        uint pledgeLIMEAmount
+        uint fee
     );
 
     event InDepo(uint _order);  //  Record a log of successful placements of pledges
@@ -56,9 +58,11 @@ contract DEx {
     * Start exchange function - Bob's call
     */
 
-    function openDEx(address _alice, address _plasmoid, uint _ethAmount, uint _btcAmount, uint _limeAmount) public {
+    function openDEx(address _alice, address _plasmoid, uint _ethAmount, uint _btcAmount, uint _fee) public {
+        uint limeAmount;
         ORDER = ORDER + 1;
-        StartDEx(ORDER, _alice, msg.sender, _plasmoid, _ethAmount, _btcAmount, _limeAmount);
+        limeAmount = _ethAmount * LIME_RATIO;
+        StartDEx(ORDER, _alice, msg.sender, _plasmoid, _ethAmount, _btcAmount, limeAmount, _fee);
     }
 
     /*
@@ -77,8 +81,8 @@ contract DEx {
     * Stop exchange function - Plasmoid's call
     */
 
-    function closeDEx(uint _order, address _alice, address _plasmoid, uint _ethAmount, uint _btcAmount, uint _limeAmount) public {
-        StopDEx(_order, _alice, msg.sender, _plasmoid, _ethAmount, _btcAmount, _limeAmount);
+    function closeDEx(uint _order, address _alice, address _plasmoid, uint _ethAmount, uint _btcAmount, uint _fee) public {
+        StopDEx(_order, _alice, msg.sender, _plasmoid, _ethAmount, _btcAmount, _fee);
     }
 
 }

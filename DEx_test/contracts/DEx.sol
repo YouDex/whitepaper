@@ -29,7 +29,7 @@ contract DEx {
     uint public ORDER = 0;  // Serial order number
 
     event StartDEx(         // Record a log of all exchanges
-        uint _order,
+        uint indexed _order,
         address indexed maker,
         address indexed taker,
         address indexed plasmoid,
@@ -39,26 +39,26 @@ contract DEx {
     );
 
     event StopDEx(          //  Record a log of successful exchanges
-        uint _order,
+        uint indexed _order,
         address indexed maker,
-        address taker,
+        address indexed taker,
         address indexed plasmoid,
         uint ethAmount,
         uint btcAmount,
         uint pledgeLIMEAmount
     );
 
-    event InDepo(uint _order);  //  Record a log of successful placements of pledges
+    event InDepo(uint indexed _order);  //  Record a log of successful placements of pledges
 
-    event OutDepo(uint _order); //  Record a log of successful cancellations of pledges
+    event OutDepo(uint indexed _order, address indexed ); //  Record a log of successful cancellations of pledges
 
     /*
     * Start exchange function - Bob's call
     */
 
-    function openDEx(address _alice, address _plasmoid, uint _ethAmount, uint _btcAmount, uint _limeAmount) public {
+    function openDEx(address _maker, address _plasmoid, uint _ethAmount, uint _btcAmount, uint _limeAmount) public {
         ORDER = ORDER + 1;
-        StartDEx(ORDER, _alice, msg.sender, _plasmoid, _ethAmount, _btcAmount, _limeAmount);
+        StartDEx(ORDER, _maker, msg.sender, _plasmoid, _ethAmount, _btcAmount, _limeAmount);
     }
 
     /*
@@ -69,16 +69,16 @@ contract DEx {
         InDepo(_order);
     }
 
-    function outDepo(uint _order) public {
-        OutDepo(_order);
+    function outDepo(uint _order, address _diler) public {
+        OutDepo(_order, _diler);
     }
 
     /*
     * Stop exchange function - Plasmoid's call
     */
 
-    function closeDEx(uint _order, address _alice, address _plasmoid, uint _ethAmount, uint _btcAmount, uint _limeAmount) public {
-        StopDEx(_order, _alice, msg.sender, _plasmoid, _ethAmount, _btcAmount, _limeAmount);
+    function closeDEx(uint _order, address _maker, address _taker, uint _ethAmount, uint _btcAmount, uint _limeAmount) public {
+        StopDEx(_order, _maker, _taker, msg.sender, _ethAmount, _btcAmount, _limeAmount);
     }
 
 }

@@ -24,41 +24,45 @@ pragma solidity 0.4.18;
 
 contract DEx {
 
-    string constant public VERSION = "0.2";     // 09.12.2017
+    string constant public VERSION = "0.1";     // 28.11.2017
+    uint16 constant public LIME_RATIO = 300;    // Exchange ratio ETH/LIME     
 
     uint public ORDER = 0;  // Serial order number
 
     event StartDEx(         // Record a log of all exchanges
-        uint indexed _order,
+        uint _order,
         address indexed maker,
         address indexed taker,
         address indexed plasmoid,
         uint ethAmount,
         uint btcAmount,
-        uint pledgeLIMEAmount
+        uint pledgeLIMEAmount,
+        uint fee
     );
 
     event StopDEx(          //  Record a log of successful exchanges
-        uint indexed _order,
+        uint _order,
         address indexed maker,
-        address indexed taker,
+        address taker,
         address indexed plasmoid,
         uint ethAmount,
         uint btcAmount,
-        uint pledgeLIMEAmount
+        uint fee
     );
 
-    event InDepo(uint indexed _order);  //  Record a log of successful placements of pledges
+    event InDepo(uint _order);  //  Record a log of successful placements of pledges
 
-    event OutDepo(uint indexed _order, address indexed ); //  Record a log of successful cancellations of pledges
+    event OutDepo(uint _order); //  Record a log of successful cancellations of pledges
 
     /*
     * Start exchange function - Bob's call
     */
 
-    function openDEx(address _maker, address _plasmoid, uint _ethAmount, uint _btcAmount, uint _limeAmount) public {
+    function openDEx(address _alice, address _plasmoid, uint _ethAmount, uint _btcAmount, uint _fee) public {
+        uint limeAmount;
         ORDER = ORDER + 1;
-        StartDEx(ORDER, _maker, msg.sender, _plasmoid, _ethAmount, _btcAmount, _limeAmount);
+        limeAmount = _ethAmount * LIME_RATIO;
+        StartDEx(ORDER, _alice, msg.sender, _plasmoid, _ethAmount, _btcAmount, limeAmount, _fee);
     }
 
     /*
@@ -69,16 +73,16 @@ contract DEx {
         InDepo(_order);
     }
 
-    function outDepo(uint _order, address _dealer) public {
-        OutDepo(_order, _dealer);
+    function outDepo(uint _order) public {
+        OutDepo(_order);
     }
 
     /*
     * Stop exchange function - Plasmoid's call
     */
 
-    function closeDEx(uint _order, address _maker, address _taker, uint _ethAmount, uint _btcAmount, uint _limeAmount) public {
-        StopDEx(_order, _maker, _taker, msg.sender, _ethAmount, _btcAmount, _limeAmount);
+    function closeDEx(uint _order, address _alice, address _plasmoid, uint _ethAmount, uint _btcAmount, uint _fee) public {
+        StopDEx(_order, _alice, msg.sender, _plasmoid, _ethAmount, _btcAmount, _fee);
     }
 
 }

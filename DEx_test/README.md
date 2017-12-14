@@ -3,9 +3,14 @@ December 13 is a wonderful day! At 3-00 pm, the first successful atomic exchange
 It was implemented in the test networks Bitcoin (testnet3) and Ethereum (Rinkeby). A specially developed web application was used for atomic exchange.
 The exchange log is listed below. As can be seen from it, Alice bought 3,5ETH from Bob for 0,14BTC. 
 Exchange transactions can be tracked in test blockchains using the following links:
-https://live.blockcypher.com/btc-testnet/tx/abcae96714fae2baf13d1e82f0d0e7e77fdf54f153c2653d59c67dfb935e173c/
+https://live.blockcypher.com/btc-testnet/tx/abcae96714fae2baf13d1e82f0d0e7e77fdf54f153c2653d59c67dfb935e173c/<br>
+Alice BTC address https://live.blockcypher.com/btc-testnet/address/mrG1ZLaUNWGrD7Kpy2ZBHbA1JJcQ1RTkTk/<br>
+Bob BTC address https://live.blockcypher.com/btc-testnet/address/mwa4tW15bJereTKDDWVW5wJeKT2fKNa2tH/<br>
 https://rinkeby.etherscan.io/tx/0x820d755b784460a749764343c8c8a0e99728a58a71c913f86fe8f8ea7d1bdfcc <br>
-Screenshots and videos will be published later, as well as information on the successful exchange of real cryptocurrency.
+Alice ETH address https://rinkeby.etherscan.io/address/0x42b5fa88092df5920351ceb2186471b76b1c1a6c<br>
+Bob ETH address https://rinkeby.etherscan.io/address/0xe050b09273bcf676ef76c9354eb1a2dcbc925f4d<br>
+Plasmoid Limex address 0x8ce499e792da77298a2e864ddd16e555bd98724c (sidechain exporer soon...)<br>
+Screenshots and videos will be published later, as well as information on the successful exchange of real cryptocurrency.<br><br>
 Direct exchange log:<br>
 1: Alice place order: 0.140615BTC to  3.500ETH with pledge:2418.444LIME	dex:19499:77<br>
 2: Bob fill order: 0.141BTC to  3.500ETH with pledge:2418.444LIME	dex:19499:77<br>

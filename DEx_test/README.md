@@ -1,8 +1,8 @@
 # Hot news!
 December 13 is a wonderful day! At 3-00 pm, the first successful atomic exchange of BTC / ETH was based on the Limex protocol.
 It was implemented in the test networks Bitcoin (testnet3) and Ethereum (Rinkeby). A specially developed web application was used for atomic exchange.
-The exchange log is listed below. As can be seen from it, Alice bought 3,5ETH from Bob for 0,14BTC. 
-Exchange transactions can be tracked in test blockchains using the following links.
+The exchange log is listed below. As can be seen from it, Alice bought 3,5ETH from Bob for 0,14BTC.
+Exchange transactions can be tracked in test blockchains using the following links.<br>
 Bitcoin:<br>
 https://live.blockcypher.com/btc-testnet/tx/abcae96714fae2baf13d1e82f0d0e7e77fdf54f153c2653d59c67dfb935e173c/<br>
 Alice BTC address https://live.blockcypher.com/btc-testnet/address/mrG1ZLaUNWGrD7Kpy2ZBHbA1JJcQ1RTkTk/<br>

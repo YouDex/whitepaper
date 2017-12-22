@@ -13,7 +13,9 @@ Alice ETH address https://rinkeby.etherscan.io/address/0xfa65587c49c771eb32901d5
 Bob ETH address https://rinkeby.etherscan.io/address/0xe050b09273bcf676ef76c9354eb1a2dcbc925f4d<br>
 Limex:<br>
 Plasmoid Limex address 0x8ce499e792da77298a2e864ddd16e555bd98724c (sidechain exporer soon...)<br>
-Screenshots and videos will be published later, as well as information on the successful exchange of real cryptocurrency.<br><br>
+Screenshots and videos will be published later, as well as information on the successful exchange of real cryptocurrency.<br>
+Preliminary video can be viewed here:
+https://drive.google.com/open?id=1XT5yqQtZUbezlrPxm_SlKMdZpBCIHPPB<br><br>
 Direct exchange log:<br>
 09:39:25: Alice places order: 0.255578BTC to  5.500ETH with pledge:4833.040LIME	dex:19501:5<br>
 09:39:28: Alice places order: 0.255578BTC to  5.500ETH with pledge:4833.040LIME	dex:19501:5<br>

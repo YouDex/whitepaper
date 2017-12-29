@@ -18,9 +18,11 @@
 
 pragma solidity 0.4.18;
 
-/// @title DEx - Decentalized exchange of ETH/BTC by Limex protocol.
-/// @author Oleg Tomin - <ot@limex.io>
-/// Simple test for ETH/BTC crossshain direct exchange
+/*
+* @title DEx - Decentalized exchange of ETH/BTC by Limex protocol.
+* @author Oleg Tomin - <ot@limex.io>
+* @dev Simple test for ETH/BTC crossshain direct exchange
+*/
 
 contract DEx {
 

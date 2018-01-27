@@ -1,4 +1,4 @@
-# UDX protocol
-UDX protocol is an open source protocol for direct exchange of tokens and cryptocurrencies between decentralized applications (DApp).<br>
+# UDEX protocol
+UDEX protocol is an open source protocol for direct exchange of tokens and cryptocurrencies between decentralized applications (DApp).<br>
 The protocol is based on Ethereum blockchain and its sidechain Youdex and works as an interblockchain interface. The algorithms themselves are stored in Ethereum and Youdex preloaded smart contracts and on Oracle nodes. The code of both is licenced under MIT lenses (opensource) and available to the public. At the network level security is taken care of by the p2p protocol and Ethereum and Youdex consensus algorithms, while at the application level is handeled by the algorithms in smart contracts and DApps.<br>
-UDX protocol was heavily influences by the following ideas: Twin accounts technology, Plasma platform proposed by V. Buterin and D. Poon, BTC-relay smart contract, Oraclize, Interleger protocol, 0x protocol, DYDX protocol and others.
+UDEX protocol was heavily influences by the following ideas: Twin accounts technology, Plasma platform proposed by V. Buterin and D. Poon, BTC-relay smart contract, Oraclize, Interleger protocol, 0x protocol, DYDX protocol and others.
